@@ -1,5 +1,4 @@
 import discord
-from discord import app_commands
 import requests
 import os
 TOKEN = os.environ['TOKEN']
@@ -16,7 +15,7 @@ intents.message_content = True
 client = MyClient(intents=intents)
 
 # Command Tree for slash commands
-tree = app_commands.CommandTree(client)
+tree = discord.app_commands.CommandTree(client)
 
 # Define a slash command to get repo info from Zigistry
 @tree.command(
