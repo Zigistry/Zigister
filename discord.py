@@ -35,11 +35,9 @@ async def first_command(interaction: discord.Interaction, github_user_name: str,
     
     if response.status_code == 200:
         data = response.json()
-        readme_content = 
         result = f"""## {github_repo_name.capitalize()}
 _{data.get("description", "No description available.")}_
 [Zigistry URL]({zigistry_url}) | [GitHub URL]({github_url})
-{readme_content}
         """
         await interaction.response.send_message(result)
     else:
