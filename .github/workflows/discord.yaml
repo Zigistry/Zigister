@@ -19,5 +19,5 @@ jobs:
           pip3 install requests
     - name: Run bot
       run: |
-          python3 ./zigister.py
+          python3 ./discord.py
               
