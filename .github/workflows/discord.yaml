@@ -1,0 +1,23 @@
+name: Run bot
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Run_bot:
+    env:
+        TOKEN: ${{ secrets.TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup Python
+      uses: actions/setup-python@v5.2.0
+    - name: Install
+      run: |
+          pip3 install discord
+          pip3 install requests
+    - name: Run bot
+      run: |
+          python3 ./zigister.py
+              
