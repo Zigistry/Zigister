@@ -9,14 +9,14 @@ jobs:
   Run_bot:
     env:
         TOKEN: ${{ secrets.TOKEN }}
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/setup-python@v5.2.0
     - uses: actions/checkout@v4
     - name: Install
       run: |
-          python3 -m pip install -U discord.py
-          pip3 install requests
+          pip install discord.py
+          pip install requests
     - name: Run bot
       run: |
           python3 ./discord.py
