@@ -15,8 +15,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install
       run: |
-          pip3 install -U discord.py
-          pip3 install requests
+          python3 -m pip install -U discord.py
+           python3 -m pip install requests
     - name: Run bot
       run: |
           python3 ./zigister.py
