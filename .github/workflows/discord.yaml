@@ -8,16 +8,20 @@ on:
 jobs:
   Run_bot:
     env:
-        TOKEN: ${{ secrets.TOKEN }}
+      TOKEN: ${{ secrets.TOKEN }}
     runs-on: macos-latest
     steps:
-    - uses: actions/setup-python@v5.2.0
-    - uses: actions/checkout@v4
-    - name: Install
-      run: |
+      - uses: actions/setup-python@v5.2.0
+      - uses: actions/checkout@v4
+      - name: Set up virtual environment
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+      - name: Install dependencies
+        run: |
           python3 -m pip install -U discord.py
-           python3 -m pip install requests
-    - name: Run bot
-      run: |
+          python3 -m pip install requests
+      - name: Run bot
+        run: |
+          source venv/bin/activate
           python3 ./zigister.py
-              
