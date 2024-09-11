@@ -9,14 +9,14 @@ jobs:
   Run_bot:
     env:
         TOKEN: ${{ secrets.TOKEN }}
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/setup-python@v5.2.0
     - uses: actions/checkout@v4
     - name: Install
       run: |
-          py -3 -m pip install -U discord.py
-          pip install requests
+          pip3 install -U discord.py
+          pip3 install requests
     - name: Run bot
       run: |
           python3 ./zigister.py
